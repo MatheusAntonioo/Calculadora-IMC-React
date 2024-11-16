@@ -2,7 +2,8 @@ import { useState } from "react";
 import Button from "./Button";
 import "./ImcCalc.css";
 
-const ImcCalc = () => {
+// eslint-disable-next-line react/prop-types
+const ImcCalc = ({calcImc}) => {
   const [height, setHeight] = useState("");
   const [weight, setWeight] = useState("");
 
@@ -54,7 +55,7 @@ const ImcCalc = () => {
           </div>
         </div>
         <div className="actionControl">
-          <Button id="calcBtn" text="Calcular" />
+          <Button id="calcBtn" text="Calcular" action={(e) => calcImc(e, height, weight)} />
           <Button id="clearBtn" text="Limpar" action={clearForm} />
         </div>
       </form>
