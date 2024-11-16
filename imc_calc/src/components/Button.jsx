@@ -1,10 +1,12 @@
-import './Button.css'
+import "./Button.css";
 
 // eslint-disable-next-line react/prop-types
-const Button = ({id, text}) => {
-  return (
-    <button id={id}>{text}</button>
-  )
-}
+const Button = ({ id, text, action }) => {
+  const handleAction = (e) => {
+    action(e);
+  };
 
-export default Button
+  return <button id={id} onClick={handleAction}>{text}</button>;
+};
+
+export default Button;
